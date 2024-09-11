@@ -22,4 +22,12 @@ FLUSH PRIVILEGES;
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 Mysql结束
-创建这些玩意
+创建这些玩意创建这些玩意：在backend里面：
+config(folder):
+    db.js
+controllers(folder):
+    authControllers.js
+routes(folder):
+    auth.js
+server.js
+好的基本的配置你已经搞完了 剩下的可以参考本页面的剩饭希望能给你提供一些帮助 不懂的话 问我也没用 问问你自己为什么不懂
