@@ -1,0 +1,25 @@
+你有node.js吗？没有的话滚出这个页面去下载
+下载好了对吧 现在才是第一步：在terminal里mkdir backend（mkdir 是make directory的意思 你可以替换backend 这个词是你这个folder的名字）如果看不懂你就上网搜 肯定讲的比我清楚 我是弱智
+然后cd backend 也是在terminal里
+初始化项目：npm init -y
+安装这些项目：npm install express mysql2 bcrypt jsonwebtoken
+现在我们要下载mysql了：windows用户滚出这里 我们只有mac
+下载homebrew 没有的话上网搜 我不是你爹啥都得教你
+下载完了吧？很乖 接下来打开terminal：brew install mysql
+brew services start mysql（字面意思）很好理解吧
+mysql_secure_installation（这个是给root用户设置密码的）
+mysql -u root -p 登录咯
+接下来我们要创建数据库了：CREATE DATABASE myappdb; （myappdb）是你自己的名字 叫啥都行 我不管你
+USE myappdb;（选择这个数据库开始操作）
+为了安全起见，我们通常不直接使用 root 用户，而是创建一个专门用于应用程序的用户。：CREATE USER 'newuser'@'localhost' IDENTIFIED BY ‘your_password’;
+GRANT ALL PRIVILEGES ON myappdb.* TO 'newuser'@'localhost';
+FLUSH PRIVILEGES;
+为了存储用户信息，我们可以创建一个 users 表:CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+Mysql结束
+创建这些玩意
